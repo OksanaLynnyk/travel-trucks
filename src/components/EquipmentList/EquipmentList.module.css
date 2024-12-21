@@ -1,0 +1,25 @@
+.filterList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterItem {
+  text-transform: capitalize;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: #f2f4f7;
+  padding: 12px 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.iconMicrowave,
+.iconWater,
+.iconGasStove {
+  fill: transparent;
+  stroke: #101828;
+}

@@ -1,0 +1,17 @@
+.galleryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.catalogCard {
+  width: calc((100% - 144px) / 4);
+  height: 312px;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}

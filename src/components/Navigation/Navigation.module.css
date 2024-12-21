@@ -1,0 +1,36 @@
+.nav {
+  width: 100%;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.logoSpan {
+  color: #475467;
+}
+
+.navWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.navLink {
+  font-weight: 500;
+  transition: color 250ms linear;
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: #d84343;
+  outline: none;
+}
+
+.active {
+  color: #d84343;
+}

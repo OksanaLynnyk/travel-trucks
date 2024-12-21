@@ -1,0 +1,45 @@
+.detailsSection {
+  padding-top: 48px;
+}
+
+.detailsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.detailsHeader {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailText {
+  color: #475467;
+}
+
+.detailsTabList {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.detailsTab {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 44px;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #e44848;
+}

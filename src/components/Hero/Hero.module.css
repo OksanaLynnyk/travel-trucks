@@ -1,0 +1,26 @@
+.hero {
+  background-color: #6c717b;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../assets/img/minvan-desktop.jpg");
+  background-size: cover;
+  margin: 0 auto;
+  height: 696px;
+  max-width: 1440px;
+  color: #f7f7f7;
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heroTitle {
+  font-size: 48px;
+  line-height: 67%;
+  margin-bottom: 16px;
+}
+
+.heroText {
+  font-size: 24px;
+  margin-bottom: 40px;
+  line-height: 133%;
+}

@@ -1,0 +1,18 @@
+.button {
+  border-radius: 200px;
+  padding: 16px 32px;
+  background: transparent;
+  border: 1px solid #dadde1;
+
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #101828;
+  align-self: center;
+  transition: border 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  border: 1px solid #d84343;
+}

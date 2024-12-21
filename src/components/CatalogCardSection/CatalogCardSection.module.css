@@ -1,0 +1,26 @@
+.catalogSection {
+  max-width: 72%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.catalogCard {
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+}
+
+.catalogCard:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.noMoreItems {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  color: #ffb6c1;
+}

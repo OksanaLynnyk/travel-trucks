@@ -1,0 +1,53 @@
+.cardImg {
+  width: 292px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleCard {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: #101828;
+}
+
+.infoCard {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.iconStar {
+  fill: #ffc531;
+  margin-right: 4px;
+}
+
+.review {
+  margin-right: 16px;
+}
+
+.priceWrap {
+  display: flex;
+  gap: 12px;
+  height: 32px;
+  align-items: center;
+}
+
+.descriptionCard {
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

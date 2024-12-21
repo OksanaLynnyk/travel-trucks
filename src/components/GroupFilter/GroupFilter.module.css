@@ -1,0 +1,14 @@
+.filtersWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.title {
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.divider {
+  margin: 12px 0;
+}
