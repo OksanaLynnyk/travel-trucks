@@ -28,6 +28,7 @@ const campersSlice = createSlice({
         state.error = null;
       })
       .addCase(getDataCampers.fulfilled, (state, action) => {
+        console.log("DATA FROM API:", action.payload);
         state.loading = false;
         state.campers = action.payload.items;
         state.total = action.payload.total;

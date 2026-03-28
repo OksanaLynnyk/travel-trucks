@@ -3,49 +3,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDataCampers } from "../../redux/campers/operations";
 import { Loader } from "../Loader/Loader";
 import CatalogCard from "../CatalogCard/CatalogCard";
-import {
-  selectCampers,
-  selectError,
-  selectLoading,
-  selectTotalCampers,
-} from "../../redux/campers/selectors";
-import { selectFilter } from "../../redux/filters/selectors";
+import { selectError, selectLoading } from "../../redux/campers/selectors";
 import ButtonTransparent from "../ButtonTransparent/ButtonTransparent";
 import styles from "./CatalogCardSection.module.css";
+import { selectFilteredCampers } from "../../redux/selectors";
 
 const CatalogCardSection = () => {
   const dispatch = useDispatch();
-  const campers = useSelector(selectCampers);
+  const campers = useSelector(selectFilteredCampers);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const filters = useSelector(selectFilter);
-  const total = useSelector(selectTotalCampers);
+  const total = campers.length;
 
   const [perPage, setPerPage] = useState(4);
-  const [filteredCampers, setFilteredCampers] = useState([]);
 
   useEffect(() => {
     dispatch(getDataCampers());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (campers && filters) {
-      const filtered = campers.filter((camper) => {
-        return Object.keys(filters).every((key) => {
-          if (filters[key]) {
-            return camper[key] === filters[key];
-          }
-          return true;
-        });
-      });
-      setFilteredCampers(filtered);
-      setPerPage(4);
-    }
-  }, [campers, filters]);
-
   const loadMore = () => {
     setPerPage((prevCount) => prevCount + 4);
   };
+
+  useEffect(() => {
+    setPerPage(4);
+  }, [campers]);
 
   const noMoreItems = perPage >= total;
 
@@ -55,9 +37,9 @@ const CatalogCardSection = () => {
   return (
     <section className={styles.catalogSection}>
       <ul>
-        {filteredCampers.slice(0, perPage).map((camper) => (
+        {campers.slice(0, perPage).map((camper, index) => (
           <li key={camper.id} className={styles.catalogCard}>
-            <CatalogCard camper={camper} />
+            <CatalogCard camper={camper} isFirst={index === 0} />
           </li>
         ))}
       </ul>

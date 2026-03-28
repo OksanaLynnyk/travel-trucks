@@ -24,6 +24,14 @@ export const Navigation = () => (
       >
         Catalog
       </NavLink>
+      <NavLink
+        to="/favorites"
+        className={({ isActive }) =>
+          clsx(styles.navLink, isActive && styles.active)
+        }
+      >
+        Favorites
+      </NavLink>
     </div>
   </nav>
 );

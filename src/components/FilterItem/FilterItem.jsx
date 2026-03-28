@@ -2,34 +2,32 @@ import { Field } from "formik";
 import { useId } from "react";
 import styles from "./FilterItem.module.css";
 
-const FilterItem = ({ type, name, value, label, icon, sprite, fixedValue }) => {
+const FilterItem = ({ type, name, value, label, icon, sprite }) => {
   const id = useId();
 
   return (
     <div className={styles.filterItem}>
-      <Field name={name} type={type}>
+      <Field name={name}>
         {({ field, form }) => {
-          const isChecked =
-            type === "radio"
-              ? field.value === value
-              : field.value === fixedValue;
+          const checked =
+            type === "checkbox" ? Boolean(field.value) : field.value === value;
 
           const handleChange = () => {
+            if (type === "checkbox") {
+              form.setFieldValue(name, !checked);
+            }
+
             if (type === "radio") {
               form.setFieldValue(name, value);
-            } else if (type === "checkbox") {
-              form.setFieldValue(name, isChecked ? "" : fixedValue);
             }
           };
 
           return (
             <label htmlFor={id} className={styles.filterLabel}>
               <input
-                {...field}
                 id={id}
                 type={type}
-                value={value}
-                checked={isChecked}
+                checked={checked}
                 onChange={handleChange}
               />
               <div>
@@ -45,5 +43,4 @@ const FilterItem = ({ type, name, value, label, icon, sprite, fixedValue }) => {
     </div>
   );
 };
-
 export default FilterItem;

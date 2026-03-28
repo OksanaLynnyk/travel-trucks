@@ -4,7 +4,7 @@ import styles from "./CatalogCard.module.css";
 import CardHeader from "../CardHeader/CardHeader";
 import EquipmentList from "../EquipmentList/EquipmentList";
 
-const CatalogCard = ({ camper }) => {
+const CatalogCard = ({ camper, isFirst }) => {
   const navigate = useNavigate();
 
   return (
@@ -13,11 +13,14 @@ const CatalogCard = ({ camper }) => {
         src={camper.gallery[0].thumb}
         alt={camper.name}
         className={styles.cardImg}
+        loading={isFirst ? "eager" : "lazy"}
+        width="569"
+        height="320"
       />
       <div className={styles.contentWrapper}>
         <CardHeader camper={camper} />
         <p className={styles.descriptionCard}>{camper.description}</p>
-        <EquipmentList camper={camper} limit={6} />
+        <EquipmentList camper={camper} limit={7} />
         <ButtonColored
           type="button"
           title="Show more"

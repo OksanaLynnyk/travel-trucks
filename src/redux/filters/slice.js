@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-  AC: null,
+  ac: false,
+  tv: false,
+  kitchen: false,
+  bathroom: false,
   transmission: "",
-  kitchen: null,
-  TV: null,
-  bathroom: null,
-  form: "",
+  type: "",
   location: "",
 };
 
@@ -36,6 +36,12 @@ const filtersSlice = createSlice({
     changeFilterLocation(state, action) {
       state.location = action.payload;
     },
+    setFilters(state, action) {
+      return {
+        ...INITIAL_STATE,
+        ...action.payload,
+      };
+    },
     resetFilters() {
       return INITIAL_STATE;
     },
@@ -51,5 +57,6 @@ export const {
   changeFilterBathroom,
   changeFilterForm,
   changeFilterLocation,
+  setFilters,
   resetFilters,
 } = filtersSlice.actions;

@@ -1,11 +1,11 @@
 .hero {
   background-color: #6c717b;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../../assets/img/minvan-desktop.jpg");
   background-size: cover;
   margin: 0 auto;
-  height: 696px;
-  max-width: 1440px;
+  height: calc(100vh - 72px);
   color: #f7f7f7;
   font-weight: 600;
   width: 100%;

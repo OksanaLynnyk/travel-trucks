@@ -31,3 +31,14 @@
   height: 32px;
   align-items: center;
 }
+
+.iconHeart {
+  cursor: pointer;
+  fill: none;
+  stroke: #101828;
+}
+
+.activeHeart {
+  fill: #e44848;
+  stroke: #e44848;
+}

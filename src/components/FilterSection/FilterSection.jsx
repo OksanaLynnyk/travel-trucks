@@ -1,42 +1,30 @@
 import { Formik, Form } from "formik";
 import sprite from "../../assets/img/sprite.svg";
 import styles from "./FilterSection.module.css";
-import { useDispatch } from "react-redux";
-import { getDataCampers } from "../../redux/campers/operations";
-import { resetFilters } from "../../redux/filters/slice";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilters } from "../../redux/filters/slice";
 import LocationFilter from "../LocationFilter/LocationFilter";
 import { ButtonColored } from "../ButtonColored/ButtonColored";
 import CheckBoxFilter from "../CheckboxFilter/CheckBoxFilter";
 import RadioFilter from "../RadioFilter/RadioFilter";
 import GroupFilter from "../GroupFilter/GroupFilter";
-
-const initialValues = {
-  AC: false,
-  transmission: false,
-  kitchen: false,
-  TV: false,
-  bathroom: false,
-  type: "",
-  location: "",
-};
+import { selectFilter } from "../../redux/filters/selectors";
 
 const FilterSection = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (filters, { resetForm }) => {
-    const filteredFilters = Object.fromEntries(
-      Object.entries(filters).filter(
-        ([, value]) => value !== false && value !== null && value !== ""
-      )
-    );
+  const filtersFromStore = useSelector(selectFilter);
 
-    dispatch(getDataCampers(filteredFilters));
-    resetForm();
-    dispatch(resetFilters());
+  const handleSubmit = (values) => {
+    dispatch(setFilters(values));
   };
 
   return (
     <section className={styles.filter}>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={filtersFromStore}
+        enableReinitialize
+        onSubmit={handleSubmit}
+      >
         {() => (
           <Form className={styles.form}>
             <LocationFilter />
