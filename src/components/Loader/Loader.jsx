@@ -4,8 +4,8 @@ export const Loader = () => (
   <InfinitySpin
     visible={true}
     width="200"
-    color="#781458"
+    color="#f769ca"
     ariaLabel="infinity-spin-loading"
-    align-self='center'
+    align-self="center"
   />
 );

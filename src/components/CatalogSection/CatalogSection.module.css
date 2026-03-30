@@ -2,5 +2,12 @@
   padding-top: 48px;
   padding-bottom: 52px;
   display: flex;
-  gap: 64px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    flex-direction: row;
+  }
 }

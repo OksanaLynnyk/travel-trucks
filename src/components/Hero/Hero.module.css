@@ -2,7 +2,10 @@
   background-color: #6c717b;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../../assets/img/minvan-desktop.jpg");
+    image-set(
+      url("../../assets/img/minivan-desktop.jpg") 1x,
+      url("../../assets/img/minivan-desktop@2x.jpg") 2x
+    );
   background-size: cover;
   margin: 0 auto;
   height: calc(100vh - 72px);
@@ -23,4 +26,23 @@
   font-size: 24px;
   margin-bottom: 40px;
   line-height: 133%;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    line-height: 124%;
+  }
+
+  .heroText {
+    font-size: 18px;
+  }
+
+  .heroButton {
+    width: 100%;
+  }
 }

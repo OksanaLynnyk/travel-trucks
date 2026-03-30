@@ -1,11 +1,14 @@
 import { useSelector } from "react-redux";
+
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
-import { Header } from "../../components/Header/Header";
-import { PageContainer } from "../../components/PageContainer/PageContainer";
-import styles from "./FavoritesPage.module.css";
+import Header from "../../components/Header/Header";
+import PageContainer from "../../components/PageContainer/PageContainer";
 import CatalogCard from "../../components/CatalogCard/CatalogCard";
+
 import { selectFavorites } from "../../redux/favorites/slice";
 import { selectCampers } from "../../redux/campers/selectors";
+
+import styles from "./FavoritesPage.module.css";
 
 const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
@@ -17,13 +20,15 @@ const FavoritesPage = () => {
 
   return (
     <>
-      <DocumentTitle>Favorites</DocumentTitle>
+      <DocumentTitle
+        title="Favorites | TravelTrucks"
+        description="Your favorite campers saved for later."
+      />
       <Header />
       <main>
-        <section>
+        <section className={styles.favoritesPage}>
           <PageContainer>
             <h1 className={styles.title}>Favorites</h1>
-
             {favoriteCampers.length === 0 ? (
               <p className={styles.empty}>
                 You haven’t added any campers to favorites yet ❤️
@@ -32,7 +37,7 @@ const FavoritesPage = () => {
               <ul className={styles.list}>
                 {favoriteCampers.map((camper) => (
                   <li key={camper.id} className={styles.item}>
-                    <CatalogCard camper={camper} />
+                    <CatalogCard camper={camper} variant="favorite" />
                   </li>
                 ))}
               </ul>

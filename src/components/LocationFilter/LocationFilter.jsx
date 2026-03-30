@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import { AutoComplete, ConfigProvider } from "antd";
 import { useSelector } from "react-redux";
-import { selectCampers } from "../../redux/campers/selectors";
 import { useField } from "formik";
+import { AutoComplete, ConfigProvider } from "antd";
+
 import sprite from "../../assets/img/sprite.svg";
+
+import { selectCampers } from "../../redux/campers/selectors";
+
 import styles from "./LocationFilter.module.css";
 
 const LocationFilter = () => {
@@ -26,19 +29,9 @@ const LocationFilter = () => {
   }, [campers, initialLocations]);
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#101828",
-          colorBgContainer: "#F7F7F7",
-          colorTextPlaceholder: "#6C717B",
-          controlOutline: "none",
-          colorBorder: "tranparent",
-        },
-      }}
-    >
+    <ConfigProvider theme={LOCATION_THEME}>
       <div className={styles.locationFilter}>
-        <label htmlFor="location" className={styles.locationLable}>
+        <label htmlFor="location" className={styles.locationLabel}>
           Location
         </label>
         <AutoComplete
@@ -67,3 +60,13 @@ const LocationFilter = () => {
 };
 
 export default LocationFilter;
+
+const LOCATION_THEME = {
+  token: {
+    colorPrimary: "#101828",
+    colorBgContainer: "#F7F7F7",
+    colorTextPlaceholder: "#6C717B",
+    controlOutline: "none",
+    colorBorder: "transparent",
+  },
+};

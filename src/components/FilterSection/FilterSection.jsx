@@ -1,14 +1,18 @@
-import { Formik, Form } from "formik";
-import sprite from "../../assets/img/sprite.svg";
-import styles from "./FilterSection.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setFilters } from "../../redux/filters/slice";
+import { Formik, Form } from "formik";
+
 import LocationFilter from "../LocationFilter/LocationFilter";
-import { ButtonColored } from "../ButtonColored/ButtonColored";
+import ButtonColored from "../ButtonColored/ButtonColored";
 import CheckBoxFilter from "../CheckboxFilter/CheckBoxFilter";
 import RadioFilter from "../RadioFilter/RadioFilter";
 import GroupFilter from "../GroupFilter/GroupFilter";
+
+import sprite from "../../assets/img/sprite.svg";
+
+import { setFilters } from "../../redux/filters/slice";
 import { selectFilter } from "../../redux/filters/selectors";
+
+import styles from "./FilterSection.module.css";
 
 const FilterSection = () => {
   const dispatch = useDispatch();
@@ -37,7 +41,11 @@ const FilterSection = () => {
                 <RadioFilter sprite={sprite} />
               </GroupFilter>
             </div>
-            <ButtonColored type="submit" title="Search" />
+            <ButtonColored
+              type="submit"
+              title="Search"
+              className={styles.btnSearch}
+            />
           </Form>
         )}
       </Formik>

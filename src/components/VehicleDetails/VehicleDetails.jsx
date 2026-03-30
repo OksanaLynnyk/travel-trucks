@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import EquipmentList from "../EquipmentList/EquipmentList";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDataCampers } from "../../redux/campers/operations";
+import { useDispatch, useSelector } from "react-redux";
+
+import EquipmentList from "../EquipmentList/EquipmentList";
 import { Loader } from "../Loader/Loader";
+
+import { getDataCampers } from "../../redux/campers/operations";
 
 const VehicleDetails = () => {
   const { id } = useParams();

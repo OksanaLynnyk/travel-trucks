@@ -1,8 +1,9 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Loader } from "./components/Loader/Loader";
-import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import { useDispatch, useSelector } from "react-redux";
+
+import { Loader } from "./components/Loader/Loader";
+
 import { selectCampers } from "./redux/campers/selectors";
 import { getDataCampers } from "./redux/campers/operations";
 
@@ -16,6 +17,7 @@ const DetailsFeatures = lazy(
 const DetailsReviews = lazy(
   () => import("./components/DetailsReviews/DetailsReviews"),
 );
+const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"));
 
 export const App = () => {
   const dispatch = useDispatch();

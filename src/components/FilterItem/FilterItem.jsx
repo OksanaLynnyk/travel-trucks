@@ -1,5 +1,6 @@
-import { Field } from "formik";
 import { useId } from "react";
+import { Field } from "formik";
+
 import styles from "./FilterItem.module.css";
 
 const FilterItem = ({ type, name, value, label, icon, sprite }) => {
@@ -43,4 +44,5 @@ const FilterItem = ({ type, name, value, label, icon, sprite }) => {
     </div>
   );
 };
+
 export default FilterItem;

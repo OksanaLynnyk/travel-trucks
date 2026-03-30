@@ -1,17 +1,37 @@
 .titleWrapper {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .titleCard {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 133%;
   color: #101828;
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titleDetails {
+  max-width: none;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.infoCardRating {
+  display: flex;
+  align-items: center;
 }
 
 .infoCard {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   align-items: center;
   margin-top: 8px;
 }
@@ -41,4 +61,22 @@
 .activeHeart {
   fill: #e44848;
   stroke: #e44848;
+}
+
+@media (min-width: 768px) {
+  .titleWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .catalogCard {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .titleCard {
+    font-size: 24px;
+  }
 }

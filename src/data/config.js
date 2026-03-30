@@ -48,3 +48,9 @@ export const features = [
   { key: "gas", icon: "icon-gas-stove", label: "Gas" },
   { key: "water", icon: "icon-water", label: "Water" },
 ];
+
+export const MENU_ITEMS = [
+  { key: "/", label: "Home" },
+  { key: "/catalog", label: "Catalog" },
+  { key: "/favorites", label: "Favorites" },
+];

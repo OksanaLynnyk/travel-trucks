@@ -1,6 +1,8 @@
+.contentWrapper > *:last-child {
+  margin-top: auto;
+}
+
 .cardImg {
-  width: 292px;
-  height: 320px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -9,11 +11,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-
-.titleWrapper {
-  display: flex;
-  justify-content: space-between;
 }
 
 .titleCard {
@@ -50,4 +47,28 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (min-width: 992px) {
+  .favoritesCard .contentWrapper {
+    height: 426px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cardImg {
+    aspect-ratio: 4 / 3;
+    object-position: 56%;
+  }
+
+  .card {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .cardImg {
+    aspect-ratio: 16 / 9;
+  }
 }

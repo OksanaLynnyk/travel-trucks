@@ -34,3 +34,13 @@
 .active {
   color: #d84343;
 }
+
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+  }
+
+  .navWrap {
+    display: none;
+  }
+}

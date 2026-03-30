@@ -1,6 +1,8 @@
-import styles from "./EquipmentList.module.css";
 import sprite from "../../assets/img/sprite.svg";
+
 import { features, getCamperTypeConfig } from "../../data/config";
+
+import styles from "./EquipmentList.module.css";
 
 const kebabToCamel = (str) => {
   return str.replace(/-([a-z])/g, (match, group1) => group1.toUpperCase());

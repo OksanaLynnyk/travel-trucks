@@ -1,6 +1,6 @@
-.filtersWrap {
-  display: flex;
-  flex-wrap: wrap;
+.filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
   gap: 12px;
 }
 
@@ -10,5 +10,5 @@
 }
 
 .divider {
-  margin: 12px 0;
+  margin: 24px 0;
 }

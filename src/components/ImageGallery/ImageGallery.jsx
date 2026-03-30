@@ -6,8 +6,14 @@ const ImageGallery = ({ camper }) => {
   return (
     <ul className={styles.galleryList}>
       {gallery.map((image, index) => (
-        <li key={index} className={styles.catalogCard}>
-          <img src={image.thumb} alt={camper.name} className={styles.cardImg} />
+        <li key={index} className={styles.galleryItem}>
+          <div className={styles.imageWrapper}>
+            <img
+              src={image.thumb}
+              alt={camper.name}
+              className={styles.cardImg}
+            />
+          </div>
         </li>
       ))}
     </ul>

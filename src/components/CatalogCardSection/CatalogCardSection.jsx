@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataCampers } from "../../redux/campers/operations";
+
 import { Loader } from "../Loader/Loader";
 import CatalogCard from "../CatalogCard/CatalogCard";
-import { selectError, selectLoading } from "../../redux/campers/selectors";
 import ButtonTransparent from "../ButtonTransparent/ButtonTransparent";
-import styles from "./CatalogCardSection.module.css";
+
+import { selectError, selectLoading } from "../../redux/campers/selectors";
 import { selectFilteredCampers } from "../../redux/selectors";
+
+import styles from "./CatalogCardSection.module.css";
 
 const CatalogCardSection = () => {
   const dispatch = useDispatch();

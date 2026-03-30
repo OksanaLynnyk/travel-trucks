@@ -1,5 +1,6 @@
-import { filterItems } from "../../data/config";
 import FilterItem from "../FilterItem/FilterItem";
+
+import { filterItems } from "../../data/config";
 
 const CheckBoxFilter = ({ sprite }) => (
   <>

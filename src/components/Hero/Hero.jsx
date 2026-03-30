@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { ButtonColored } from "../ButtonColored/ButtonColored";
-import { PageContainer } from "../PageContainer/PageContainer";
+
+import ButtonColored from "../ButtonColored/ButtonColored";
+import PageContainer from "../PageContainer/PageContainer";
+
 import styles from "./Hero.module.css";
 
-export const Hero = () => {
+const Hero = () => {
   const navigate = useNavigate();
+
   return (
     <main>
       <section className={styles.hero}>
@@ -17,9 +20,12 @@ export const Hero = () => {
             type="button"
             title="View Now"
             onClick={() => navigate("/catalog")}
+            className={styles.heroButton}
           />
         </PageContainer>
       </section>
     </main>
   );
 };
+
+export default Hero;

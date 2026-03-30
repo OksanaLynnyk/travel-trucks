@@ -1,22 +1,30 @@
 import { useNavigate } from "react-router-dom";
-import { ButtonColored } from "../ButtonColored/ButtonColored";
-import styles from "./CatalogCard.module.css";
+
+import ButtonColored from "../ButtonColored/ButtonColored";
 import CardHeader from "../CardHeader/CardHeader";
 import EquipmentList from "../EquipmentList/EquipmentList";
 
-const CatalogCard = ({ camper, isFirst }) => {
+import styles from "./CatalogCard.module.css";
+
+const CatalogCard = ({ camper, isFirst, variant }) => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <img
-        src={camper.gallery[0].thumb}
-        alt={camper.name}
-        className={styles.cardImg}
-        loading={isFirst ? "eager" : "lazy"}
-        width="569"
-        height="320"
-      />
+    <div
+      className={` ${
+        variant === "favorite" ? styles.favoritesCard : styles.card
+      }`}
+    >
+      <div className={styles.imageWrapper}>
+        <img
+          src={camper.gallery[0].thumb}
+          alt={camper.name}
+          className={styles.cardImg}
+          loading={isFirst ? "eager" : "lazy"}
+          width="569"
+          height="320"
+        />
+      </div>
       <div className={styles.contentWrapper}>
         <CardHeader camper={camper} />
         <p className={styles.descriptionCard}>{camper.description}</p>
@@ -27,7 +35,7 @@ const CatalogCard = ({ camper, isFirst }) => {
           onClick={() => navigate(`/catalog/${camper.id}`)}
         />
       </div>
-    </>
+    </div>
   );
 };
 

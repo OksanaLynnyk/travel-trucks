@@ -1,4 +1,5 @@
 import { filterItemsRadio } from "../../data/config";
+
 import FilterItem from "../FilterItem/FilterItem";
 
 const RadioFilter = ({ sprite }) => (

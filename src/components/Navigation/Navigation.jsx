@@ -1,8 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
-import styles from "./Navigation.module.css";
 import clsx from "clsx";
 
-export const Navigation = () => (
+import styles from "./Navigation.module.css";
+
+const Navigation = () => (
   <nav className={styles.nav}>
     <Link to="/" className={styles.logo}>
       Travel<span className={styles.logoSpan}>Trucks</span>
@@ -35,3 +36,5 @@ export const Navigation = () => (
     </div>
   </nav>
 );
+
+export default Navigation;

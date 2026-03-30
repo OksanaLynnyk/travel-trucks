@@ -1,8 +1,3 @@
-.filter {
-  max-width: 28%;
-  width: 100%;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -18,4 +13,25 @@
 .filterText {
   font-weight: 500;
   color: #475467;
+}
+
+@media (max-width: 767px) {
+  .wrap {
+    gap: 16px;
+  }
+
+  .form {
+    gap: 16px;
+  }
+
+  .btnSearch {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .filter {
+    max-width: 28%;
+    width: 100%;
+  }
 }
